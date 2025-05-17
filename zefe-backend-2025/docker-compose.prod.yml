@@ -1,0 +1,64 @@
+version: '3.3'
+
+services:
+  web:
+    container_name: zefe_web
+    restart: always
+    build: .
+    # command: python manage.py runserver 0.0.0.0:8000
+    command: gunicorn core.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - static_volume:/app/staticfiles
+      - media_volume:/app/media
+    ports:
+      - 8000:8000
+    expose:
+      - 8000
+    env_file:
+      - ./.env
+    # depends_on:
+    #   - db
+  #in production it is not good to use container for database
+  # db:
+  #   container_name: zefe_db
+  #   image: postgres:13.0-alpine
+  #   volumes:
+  #     - db_data:/var/lib/postgresql/data/
+  #   ports:
+  #     - 5432:5432
+  #   env_file:
+  #     - ./.env
+
+  # nginx:
+  #   container_name: zefe_nginx
+  #   restart: always
+  #   build: ./nginx
+  #   volumes:
+  #     - static_volume:/app/staticfiles
+  #     - media_volume:/app/media
+  #     - ./letsencrypt:/etc/letsencrypt:ro  # ✅ Add this line
+
+  #   ports:
+  #     - 80:80     
+  #     - 443:443                  
+  #   depends_on:
+  #     - web
+
+  # certbot:
+  #   image: certbot/certbot
+  #   container_name: certbot
+  #   volumes:
+  #     - ./letsencrypt:/etc/letsencrypt
+  #     - ./letsencrypt:/var/lib/letsencrypt
+  #   entrypoint: /bin/sh -c
+  #   command: >
+  #     "trap exit TERM; while :; do sleep 12h & wait $${!}; certbot renew; done"
+
+volumes:
+  # db_data:
+  static_volume:
+  media_volume:
+
+
+
+

@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "server"
+version = "0.1.0"
+description = ""
+authors = ["Suzan Rana <dev.suzanrana@gmail.com>"]
+readme = "README.md"
+package-mode = false  # ✅
+
+[tool.poetry.dependencies]
+python = "^3.13"
+asgiref = "3.8.1"
+certifi = "2025.1.31"
+charset-normalizer = "3.4.1"
+django = "5.1.6"
+django-cors-headers = "4.7.0"
+django-filter = "25.1"
+djangorestframework = "3.15.2"
+djangorestframework-simplejwt = "5.4.0"
+drf-yasg = "1.21.9"
+idna = "3.10"
+inflection = "0.5.1"
+packaging = "24.2"
+pillow = "11.1.0"
+pyjwt = "2.10.1"
+pytz = "2025.1"
+pyyaml = "6.0.2"
+qrcode = "8.0"
+requests = "2.32.3"
+sqlparse = "0.5.3"
+uritemplate = "4.1.1"
+urllib3 = "2.3.0"
+psycopg2-binary = "^2.9.10"
+gunicorn = "20.0.4"
+boto3 = "^1.38.3"
+dotenv = "^0.9.9"
+python-telegram-bot = "^22.0"
+python-magic = "^0.4.27"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

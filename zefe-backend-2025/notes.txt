@@ -1,0 +1,18 @@
+
+
+
+
+#bot name --zefe1026
+bot username ---zefe_network_bot
+bot token 7768362707:AAEnVm1DYxeKoFgkaVOxfcFyng_vVTNY2og
+t.me/zefe_network_bot ---> telegram bot api
+
+
+
+when user click on event , backend will send qr code and id of that userevent
+then frontend must sent both userevent to make zefe_network_bot
+
+(unique event name)
+
+
+user data in init api...
