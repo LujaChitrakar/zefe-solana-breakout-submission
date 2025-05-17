@@ -35,5 +35,6 @@ PreConnect is a **Telegram Mini App** designed to help event attendees **connect
    - Spam/Ignore: SOL is locked for 3 days, then claimable by sender.
 5. **Sender claims funds** back if no action is taken after timeout.
 
-
+#  The deployed link is
+  https://main.d1gydbkzwue1ii.amplifyapp.com/
 
